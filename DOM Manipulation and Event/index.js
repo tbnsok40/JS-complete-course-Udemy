@@ -80,6 +80,10 @@ function init() {
     document.querySelector('.player-0-panel').classList.add('active');
 }
 
+// 1. if someone rolls two 6 in a row => losses entire score
+// 2. add an inpuf field to the html, where player can set the winning score.
+// 3. add another dice in game. player looses his current score when one of them is a 1.
+
 
 // // textContent의 c가 소문자가 아니도록 주의하자 시벌
 // // getElementsById와 getElementById는 다를다. s 주의 **
