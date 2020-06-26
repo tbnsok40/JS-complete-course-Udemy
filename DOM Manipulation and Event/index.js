@@ -1,57 +1,7 @@
 var scores, roundScore, activePlayer; // this is global scope
 
-// Math.random() : random 출력(decimals)
-// Math.floor(Math.random()): random 출력 (integers)
-// Math.random()*6 : 0~5 출력
-
-//dice = Math.floor(Math.random() * 6) + 1;
-//querySelector(): select the first stuff as CSS way
-//document.querySelector('#current-' + activePlayer).textContent = dice;
-//document.querySelector('#current-' + activePlayer).innerHTML = '<em>' + dice + '</em>' // string으로 작성하는거 잊지말기, <em>: italic
-// innerHTML과 textContent 차이
-
-//css속성을 바꾸는 것
-// document.querySelector('.dice').style.display = 'none'
 init();
 
-
-
-// Events, Event listener
-
-// function btn() {
-
-// }
-// btn();
-
-// add a event listener
-//document.querySelector('.btn-roll').addEventListener('click', btn); // careful not to use btn(), because with that (), function btn will operate all the time
-
-
-//this is called anonymous function
-// document.querySelector('.btn-roll').addEventListener('click', function () {
-//     //1. random number
-//     var dice = Math.floor(Math.random() * 6) + 1;
-//     //scoping chane, use only in here
-
-//     //2. display the result
-//     // var diceDOM = document.querySelector('.dice');
-//     // diceDOM.style.display = 'block';
-//     // diceDOM.src = 'dice-' + dice + '.png'; // changing the image
-//     var diceDOM = document.querySelector('.dice');
-//     diceDOM.style.display = 'block';
-//     diceDOM.src = 'dice-' + dice + '.png';
-
-//     //3. update the round score if the rolled number was not a 1
-//     if (dice !== 1) {
-//         //add score
-//         roundScore += dice;
-//         document.querySelector('#current-' + activePlayer).textContent = roundScore;
-//     } else {
-//         // next player
-//         nextPlayer();
-//     }
-
-// });
 document.querySelector('.btn-roll').addEventListener('click', function () {
     // 1. Random number
     var dice = Math.floor(Math.random() * 6) + 1;
