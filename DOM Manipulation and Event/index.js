@@ -4,13 +4,24 @@
 document.querySelector('.btn-roll').addEventListener('click', function () {
     if (gamePlaying) {
         // 1. I need random number
-        var dice = Math.floor(Math.random() * 6 + 1)
+        var dice = Math.floor(Math.random() * 6) + 1
         // 2. display the number
+
         var diceDOM = document.querySelector('.dice')
         diceDOM.src = "dice-" + dice + ".png";
         diceDOM.style.display = 'block';
+
+        // dice double 6
+        // if (dice_pre && dice === 3) {
+        //     if (dice_pre === dice) {
+        //         roundScore = 100;
+        //         document.querySelector('#current-' + activePlayer).textContent = roundScore;
+        //     }
+        // }
+
         //3. Update roundScore if dice number wasn't a 1
         if (dice !== 1) {
+            dice_pre = dice
             roundScore += dice
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
         } else {
@@ -23,10 +34,11 @@ document.querySelector('.btn-hold').addEventListener('click', function () {
 
     if (gamePlaying) {
         scores[activePlayer] += roundScore;
-
         document.querySelector('#score-' + activePlayer).textContent = scores[activePlayer];
 
-        if (scores[activePlayer] >= 30) {
+        final_score = document.querySelector('.final-score').value; // textContent대신에 value를 써줘야한다.
+        // have to change that 30 to something
+        if (scores[activePlayer] >= final_score) {
             document.querySelector('#name-' + activePlayer).textContent = 'WINNER';
             document.querySelector('.dice').style.display = 'none';
             document.querySelector('.player-' + activePlayer + '-panel').classList.add('winner');
