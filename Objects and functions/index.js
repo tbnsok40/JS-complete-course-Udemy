@@ -34,7 +34,7 @@ var mark = new Person('Mark', 1992, 'Engineer');
 john.calculateAge();
 jane.calculateAge();
 mark.calculateAge();
-
+console.log(john)
 // you can see inheritance works by this codes
 console.log(john.lastName);
 console.log(jane.lastName);
