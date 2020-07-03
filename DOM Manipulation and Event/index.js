@@ -21,10 +21,16 @@ document.querySelector('.btn-roll').addEventListener('click', function () {
         // }
 
         //3. Update roundScore if dice number wasn't a 1
-        if ((dice1 !== 1) || (dice2 !== 1)) {
+        if ((dice1 !== 1) && (dice2 !== 1)) {
             sum = dice1 + dice2
             roundScore += (sum)
             document.querySelector('#current-' + activePlayer).textContent = roundScore;
+        } else if ((dice1 === 1) || (dice2 === 1)) {
+            roundScore = 0
+            document.querySelector('#current-' + activePlayer).textContent = roundScore;
+        } else if ((dice1 === 6) && (dice2 === 6)) {
+            roundScore = 0
+            document.querySelector('#score-' + activePlayer).textContent = roundScore;
         } else {
             nextPlayer();
         }
@@ -95,9 +101,9 @@ function init() {
     document.querySelector('.player-0-panel').classList.add('active');
 }
 
-// 1. if someone rolls two 6 in a row => losses entire score
-// 2. add an inpuf field to the html, where player can set the winning score.
-// 3. add another dice in game. player looses his current score when one of them is a 1.
+// 1. if someone rolls two 6 in a row => losses entire score ()
+// 2. add an input field to the html, where player can set the winning score. (checked)
+// 3. add another dice in game. player looses his current score when one of them is a 1. (checked)
 
 
 // // textContent의 c가 소문자가 아니도록 주의하자 시벌

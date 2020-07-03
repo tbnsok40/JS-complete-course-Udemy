@@ -139,6 +139,8 @@ i {
 
 .btn-new { top: 45px;}
 .input { top: 10px;}
+input:focus{outline:none;}
+input{border: none;}
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}
 
