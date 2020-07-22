@@ -1,3 +1,5 @@
+// 함수 호출에 관한 챕터
+
 var john = {
     name: 'LIM',
     age: 28,
@@ -78,6 +80,10 @@ var lim = {
 var kim = {
     string: '2?'
 };
+lim.yell();
+lim.yell.call(kim)
 
-var yell2 = lim.yell.call(kim);
+// var yell2 = lim.yell.bind(kim);
+// 아래줄에서 호출하지 않는다면, call과는 다르게 자동으로 호출되지 않는다.
+
 // yell2();

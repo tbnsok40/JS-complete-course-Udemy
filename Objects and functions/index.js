@@ -1,12 +1,11 @@
 // function constructor
-
 var john = {
     name: 'john',
     yearOfBirth: 1993,
     job: 'dev',
 };
 
-
+// function constructor
 var Person = function (name, yearOfBirth, job) {
     this.name = name;
     this.yearOfBirth = yearOfBirth;
@@ -43,7 +42,6 @@ console.log(mark.lastName);
 // john's own property != lastName
 // because it is inherited by Person prototype
 // john is instance of Person
-
 console.log('')
 
 // method which is prototype property, eg) length(), pop(), push()
@@ -66,14 +64,15 @@ var jane = Object.create(personProto, {
 });
 
 console.log('')
+
+
 // Primitives vs Objects
 // holds the data inside of primitives itself
-
 var a = 23;
 var b = a;
 a = 46;
-console.log(a);
-console.log(b);
+console.log(a); // 46
+console.log(b); // 23  어찌보면 당연. b는 a가 23일때 할당했고, 그 후론 건들지 않았으니
 
 var obj1 = {
     name: 'hon',
@@ -81,7 +80,7 @@ var obj1 = {
 };
 
 var obj2 = obj1;
-obj1.age = 30;
+obj1.age = 30; // 근데 객체는 변수와 다르게, 원형이 변하면 딸려오는 것도 변해
 console.log(obj1.age); // 30
 console.log(obj2.age); // 30
 
@@ -120,7 +119,6 @@ function arrayCalc(arr, fn) {
     }
     return arrRes;
 }
-
 // callback function: fn
 function calculateAge(element) {
     return 2016 - element;
@@ -147,6 +145,13 @@ console.log(fullAges);
 
 var rates = arrayCalc(ages, masxHeartRate);
 console.log(rates);
+
+
+var ages = arrayCalc(numbers, calculateAge);
+console.log(ages)
+
+var check = arrayCalc(calculateAge(numbers, calculateAge), maxHeartRate);
+console.log(check)
 
 
 
