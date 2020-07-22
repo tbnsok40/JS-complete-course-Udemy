@@ -1,6 +1,8 @@
 // promise를 썼다는 것 자체가 비동기의 선언 => 여기서 1000ms기다리는 동안 백그라운드에서
 // 다른 코드들이 작동할 수 있다.
 
+// 기능을 정상적으로 수행하여 인자를 전달하는 resolve 콜백함수,
+// 문제 발생시 호출하게 될 reject 콜백함수
 // const myPromise = new Promise((resolve, reject) => {
 //     setTimeout(() => {
 //         resolve(1);
