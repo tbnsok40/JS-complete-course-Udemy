@@ -15,7 +15,6 @@ function printWithDelay(print, timeout) {
 }
 printWithDelay(() => console.log('asynch'), 2000);
 
-
 // callback hell example
 class UserStorage {
     loginUser(id, password, onSuccess, onError) {

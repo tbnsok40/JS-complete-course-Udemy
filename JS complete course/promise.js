@@ -59,17 +59,20 @@
 // });
 
 
+// 기능을 정상적으로 수행하여 인자를 전달하는 resolve 콜백함수
+// 문제 발생시 호출하게 될 reject 콜백함수
+
 // 1. Producer
 // when new Promise is created, the executor(callback func) runs automatically
 const promise = new Promise((resolve, reject) => {
     console.log('doin something');
     setTimeout(() => {
-        //     resolve('LIM');
+        // resolve('LIM');
         reject(new Error('no network')) // Error는 js에서 제공하는 클래스, erorr가 발생한 이유를 써준다.
     }, 2000); // 2초 동안 다른 일 하고 있다가 실행되는 부분
 });
-// // 2. Consumer, then, catch, finally
 
+// 2. Consumer, then, catch, finally
 promise//
     .then(value => { //위의 resolve의 파라미터가 들어오게 된다 value로.
         console.log(value);
@@ -95,4 +98,3 @@ fetchNumber
         });
     })
     .then(num => console.log(num));
-
