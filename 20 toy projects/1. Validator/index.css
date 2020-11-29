@@ -20,10 +20,15 @@ body{
     /* vertically center setting */
     min-height: 100vh;
     margin: 0;
+
+
+    
 }
 
 .container{
-    background-color: #fff;
+
+    
+
     /* border-radius: 5px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);  */
     /* for drow shadow */
@@ -31,12 +36,15 @@ body{
     width: 400px;
     /* 왜 height는 설정하지 않지 */
 
-
+    /* background-color: #fff;
     border-radius: 30px;
     box-shadow: 10px 10px 30px rgb(174, 174, 192, 0.5),
-    -10px -10px 30px rgba(255, 255, 255);
+    -10px -10px 30px rgba(255, 255, 255); */
 
-
+    border-radius: 17px;
+    /* background: linear-gradient(315deg, #ffffff, #e6e1e1); */
+    box-shadow:  -5px -5px 3px #d4d0d0,
+                 3px 3px 1px #f0f0f0;
 }
 
 h2{
@@ -61,17 +69,25 @@ h2{
 }
 
 .form-control input{
+    /* border: 0.2px; */
     border: 2px solid #f0f0f0;
     border-radius: 4px;
     display: block;
     width: 100%; 
     padding: 10px;
     font-size: 14px;
+
+
+    border-radius: 7px;
+    /* background: #fffafa; */
+    box-shadow: inset -5px -5px 10px #ede9e9, 
+                inset -5px -5px 10px #ffffff;
 }
 
 .form-control input:focus{
     outline: 0;
-    border-color: #777;
+    border-color: rgba(70, 69, 69, 0.473);
+    /* border:none; */
 }
 
 
@@ -119,7 +135,7 @@ h2{
     .form button {
       width: 50%;
       margin-left: auto;
+    }
       /* justify-self: flex-end; 얘가 안먹히고 위 코드가 먹히네*/ 
 
-    }
-  }
+}

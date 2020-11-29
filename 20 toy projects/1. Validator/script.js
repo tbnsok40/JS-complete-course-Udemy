@@ -3,6 +3,7 @@ const username = document.getElementById("username");
 const email = document.getElementById("email");
 const password = document.getElementById("password");
 const password2 = document.getElementById("password2");
+const univ = document.getElementById("univ");
 
 // show input error mesesage
 function showError(input, message) {
@@ -29,6 +30,18 @@ function checkEmail(input) {
         showSuccess(input)
     } else {
         showError(input, "Email is not valid")
+    }
+}
+
+// check Univ
+function checkUniv(input) {
+    const substring = /대학교/;
+
+    // if (substring in input.)
+    if (substring.test(input.value)) {
+        showSuccess(input)
+    } else {
+        showError(input, `${getFieldName(input)} should contains 대학교`)
     }
 }
 
@@ -107,6 +120,7 @@ form.addEventListener('submit', function (e) {
     checkLength(password, 6, 20);
     checkEmail(email);
     checkPasswordMatch(password, password2)
+    checkUniv(univ)
 });
 
 // password가 특수문자 가지도록 해보기
