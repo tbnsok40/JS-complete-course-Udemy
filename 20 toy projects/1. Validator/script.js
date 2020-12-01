@@ -7,7 +7,7 @@ const univ = document.getElementById("univ");
 
 // show input error mesesage
 function showError(input, message) {
-    const formControl = input.parentElement;
+    const formControl = input.parentElement; // 어차피 class = formcontroll인 div같은데, 상위에서 선언,정의하면 안돼나?.?
     formControl.className = "form-control error";
     const small = formControl.querySelector('small');
     small.innerText = message;
