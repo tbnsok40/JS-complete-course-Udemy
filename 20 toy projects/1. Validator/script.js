@@ -12,6 +12,7 @@ function showError(input, message) {
     const small = formControl.querySelector('small');
     small.innerText = message;
 }
+
 // show success outline
 function showSuccess(input) {
     const formControl = input.parentElement;
@@ -26,7 +27,7 @@ function showSuccess(input) {
 
 function checkEmail(input) {
     const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (re.test(input.value.trim())) {
+    if (re.test(input.value.trim())) { // 좌우에서 공백을 제거하는 함수 trim()
         showSuccess(input)
     } else {
         showError(input, "Email is not valid")
@@ -36,7 +37,6 @@ function checkEmail(input) {
 // check Univ
 function checkUniv(input) {
     const substring = /대학교/;
-
     // if (substring in input.)
     if (substring.test(input.value)) {
         showSuccess(input)
@@ -55,7 +55,7 @@ function checkRequired(inputArr) {
             showSuccess(input);
         }
     });
-}
+} 
 
 // check password match
 function checkPasswordMatch(input1, input2) {
@@ -125,4 +125,3 @@ form.addEventListener('submit', function (e) {
 
 // password가 특수문자 가지도록 해보기
 // 반응형으로 짜보기
-
