@@ -49,7 +49,7 @@ function checkUniv(input) {
 // check required fields
 function checkRequired(inputArr) {
     inputArr.forEach(function (input) {
-        if (input.value.trim() === "") {
+        if (input.value === "") {
             showError(input, `${getFieldName(input)} is not required`);
         } else {
             showSuccess(input);

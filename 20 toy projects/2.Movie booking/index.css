@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+/* default */
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #242333;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	/* 이게 있어야 세로로 중앙 배치 된다 */
+
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	font-family: 'Lato', sans-serif;
+	margin: 0;
+}
+
+.movie-container {
+	margin: 20px 0;
+}
+
+.movie-container select {
+	background-color: #fff;
+	border: none;
+	border-radius: 5px;
+	font-size: 14px;
+	margin-left: 10px;
+	padding: 5px 15px 5px 15px;
+
+	/* 위의 padding 효과는 윈도우에서 바로 나타날 수 있지만,
+    os에 따라 그렇지 않을 수도 있기에 아래 값들을 넣어준다. 
+    And select box의 화살표도 없애줌*/
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.container {
+	/* perspective is for 3d effect */
+	perspective: 1000px;
+	margin-bottom: 40px;
+}
+
+.seat {
+	background-color: #444451;
+	height: 12px;
+	width: 15px;
+	margin: 3px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+/* 클래스 명이 띄어쓰기 돼있을 때 comma로 이어준다 */
+.seat.selected {
+	background-color: #6feaf6;
+}
+
+.seat.occupied {
+	background-color: #fff;
+}
+
+/* 2번째 열을 기준으로 삼는다 */
+.seat:nth-of-type(2) {
+	margin-right: 18px;
+}
+
+/* 뒤에서 2번째 열을 기준으로 삼는다 */
+.seat:nth-last-of-type(2) {
+	margin-left: 18px;
+}
+
+/* 신기하다 */
+.seat:not(.occupied):hover {
+	cursor: pointer;
+	transform: scale(1.4);
+}
+
+/* legend의 자리는 hover되지 않도록 처리 */
+.showcase .seat:not(.occupied):hover {
+	cursor: pointer;
+	transform: scale(1);
+}
+
+.showcase {
+	/* transparent effect */
+	background-color: rgba(0, 0, 0, 0.1);
+
+	padding: 5px 10px;
+	border-radius: 5px;
+	color: #777;
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* li앞에 왜 comma가 없는지 파악할것 (태그이므로) */
+.showcase li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 10px;
+}
+.showcase li small {
+	margin-left: 5px;
+}
+
+.row {
+	display: flex;
+}
+
+.screen {
+	background-color: #fff;
+	height: 70px;
+	width: 100%;
+	margin: 15px 0;
+
+	/* rotate와 rotateX는 다르다 */
+	transform: rotateX(-45deg);
+	box-shadow: 0 3px 10px rgba(255, 255, 255, 0.9);
+}
+
+p.text {
+	margin: 5px 0;
+}
+
+p.text span {
+	color: #6feaf6;
+}
