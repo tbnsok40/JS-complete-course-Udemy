@@ -5,7 +5,7 @@ const showMillionairesBtn = document.getElementById('show-millionaires');
 const sortBtn = document.getElementById('sort');
 const calculateWealthBtn = document.getElementById('calculate-wealth');
 
-let data = [];
+let data = []; //global 변수
 
 
 
@@ -27,6 +27,7 @@ async function getRandomUser() {
     // fetch is asynchronous => so use the await
     const res = await fetch('https://randomuser.me/api');
     const data = await res.json();
+    console.log(data)
 
     const user = data.results[0];
 
@@ -36,14 +37,20 @@ async function getRandomUser() {
 
     }
 
-    addData(newUser)
+    addData(newUser) // newUser가 data가 된다. 놀래라이씨
 
 }
 
 function doubleMoney() {
+
+    data.map(user => {
+        console.log(user)
+    })
+    // 전역변수 data를 가져다 mapping
     data = data.map((user) => {
         // spread operation
         return { ...user, money: user.money * 2 }
+        // spread연산자로 user의 기존 정보들은 모두 그대로 박아두고, money라는 key에 대해서만 값을 수정하여 return한다.
     })
 
     updateDom();
