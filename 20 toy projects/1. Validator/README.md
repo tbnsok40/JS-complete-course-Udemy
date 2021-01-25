@@ -3,8 +3,12 @@
 - [ ] 성별 체크 박스 추가
 - [x] 대학교 문자열 체크
 - [ ] 뉴모피즘 업데이트
+<<<<<<< HEAD
 - [ ] 학년 선택
 
+=======
+- [ ] university, grade in same row
+>>>>>>> refs/remotes/origin/master
 
 
 <h3> 💛 생각해봐야 할 것, 배운 것</h3>
