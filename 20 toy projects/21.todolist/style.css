@@ -29,8 +29,11 @@
 
 ul{
     list-style: none;
+<<<<<<< HEAD
 }
 
 .fa-trash{
     pointer-events: none;
+=======
+>>>>>>> refs/remotes/origin/master
 }
