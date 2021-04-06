@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 
-후에 페이지 전체에 걸쳐 색상을 변경해야 할 경우 유용하다
+/*후에 페이지 전체에 걸쳐 색상을 변경해야 할 경우 유용하다*/
 :root{
     --success-color:  #2ecc71;
     --error-color: #e74c3c;
