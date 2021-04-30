@@ -16,7 +16,7 @@ getRandomUser();
 async function getRandomUser() {
 
     // use async then we don need this chain stuffs
-    // fetch('https://randomuser.me/api').then(res => res.json()).then(data => )
+    // fetch('https://randomuser.me/api').then(res => res.json()).then(data => ) // <== memo this
 
     // fetch is asynchronous => so use the await
     const res = await fetch('https://randomuser.me/api');
@@ -24,8 +24,7 @@ async function getRandomUser() {
     const user = data.results[0];
     const newUser = {
         name: `${user.name.first} ${user.name.last}`,
-        money: Math.floor(Math.random() * 1000000)
-
+        money: Math.floor(Math.random() * 1000000) // 사실상 api에서 활용하는 정보는 이름 밖에 없네.. 돈은 임의로 만들어 내버림.
     }
     addData(newUser) // newUser가 data가 된다. 놀래라이씨
 }
@@ -51,13 +50,10 @@ function addData(obj) {
     updateDom(); // if nothing is in the args, then just thorow the data as args (originally it supposed to get the providedData)
 }
 
-
-// Updata Dom
+// Update Dom
 function updateDom(providedData = data) {
-
     // Clear Main Div
-    main.innerHTML = '<h2><strong>Person </strong>Wealth</h2>'; // 이게 없으면 브라우저에서도 사라짐...how?
-
+    // main.innerHTML = '<h2><strong>Person </strong>Wealth</h2>'; // 이게 없으면 브라우저에서도 사라짐...how?
 
     providedData.forEach(item => {
         const element = document.createElement('div');
