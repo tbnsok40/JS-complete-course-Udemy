@@ -16,6 +16,16 @@ function showError(input, message){
     small.innerText = message
 }
 
+function checkUniv(input) {
+    const substring = /대학교/;
+    // if (substring in input.)
+    if (substring.test(input.value)) {
+        showSuccess(input)
+    } else {
+        showError(input, `${getFieldName(input)} should contains 대학교`)
+    }
+}
+
 function showSuccess(input){
     const formControl = input.parentElement;
     formControl.className = "form-control success";
